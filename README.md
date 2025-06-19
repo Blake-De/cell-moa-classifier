@@ -8,10 +8,21 @@ A PyTorch-based ResNet (CNN) model for classifying fluorescence microscopy image
 
 ### 1. Clone the repository:
  
-[GitHub Repository](https://github.com/Blake-De/cell-moa-classifier)
+ ```bash
+git clone https://github.com/Blake-De/cell-moa-classifier.git
+```
 
+Navigate into the project directory:
 
+```bash
 cd cell-moa-classifier
+```
+
+### 2. Create and activate the conda environment:
+
+```bash
+conda env create -f NN_env.yml
+conda activate NN_env
 ```
 
 ## Usage 

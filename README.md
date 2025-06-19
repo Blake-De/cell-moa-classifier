@@ -6,6 +6,16 @@ A PyTorch-based ResNet (CNN) model for classifying fluorescence microscopy image
 
 This project builds a deep learning model to classify cell images based on how different chemical compounds affect them. It uses a ResNet-18 convolutional neural network trained on fluorescence microscopy images labeled with one of 13 biological mechanisms of action (e.g., DNA damage, actin disruption, kinase inhibition). 
 
+  ## Data
+- **Note**: The dataset used here is a preprocessed version of the [Broad Institute MCF7 Cell Imaging Dataset](https://bbbc.broadinstitute.org/BBBC021). 
+- **Source**: Broad Institute MCF7 Cell Imaging Dataset
+- Each training sample consists of 3 grayscale 512×512 images representing:
+  - DNA
+  - F-actin
+  - B-tubulin fluorescent channels
+- **Training set**: ~14,430 examples
+- **Test set**: 1,718 examples (evaluated separately)
+
 ## Development Environment Requirements
 
 - Python 3.10+
@@ -71,7 +81,7 @@ Epoch time: 54.31 seconds <br>
 The following results were obtained by running the model with this command:
 
 ```bash
-python train_model.py --train_data_dir ./data --max_epochs 5 --batch_size 32 --out model.pth
+python train_NN.py --train_data_dir ./data --max_epochs 5 --batch_size 32 --out model.pth
 ```
 
 | Metric          | Value      |

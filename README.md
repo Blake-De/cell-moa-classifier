@@ -12,7 +12,7 @@ This project builds a deep learning model to classify cell images based on how d
 - Conda (recommended: Miniconda or Anaconda)
 - PyTorch 2.6.0 (GPU support via CUDA 12.4 for GPU acceleration)
 - RDKit installed via Conda from `conda-forge`
-- All dependencies are specified in `NN_env.yml` 
+- All dependencies are specified in `NN_env.yaml` 
 
 ## Installation / Environment Setup
 
@@ -31,7 +31,7 @@ cd cell-moa-classifier
 ### 2. Create and activate the conda environment:
 
 ```bash
-conda env create -f NN_env.yml
+conda env create -f NN_env.yaml
 conda activate NN_env
 ```
 
@@ -52,13 +52,26 @@ python train_NN.py --train_data_dir /path/to/train --batch_size 20 --max_epochs 
 | `--train_data_dir`  | str    | Path to training data directory            | `gs://mscbio2066-data/trainimgs`    |
 | `--out`             | str    | File path to save the trained model        | `model.pth`                         |
 
+## Output
+
+- After training, the model is saved in **TorchScript format** as `model.pth`
+  - Loadable via `torch.jit.load()` for evaluation or inference
+- Console logs are printed during training:
+  - Loss is reported approximately every 100 steps (can be changed easily)
+  - Epoch time is displayed at the end of each epoch
+
+**Example log output:** <br>
+Epoch 0 Step 100: loss = 0.712 <br>
+Epoch 0 Step 200: loss = 0.634 <br>
+... <br>
+Epoch time: 54.31 seconds <br>
 
 ## Model Performance
 
 The following results were obtained by running the model with this command:
 
 ```bash
-python train_model.py --train_data_dir ./data --max_epochs 5 --batch_size 32 --out model_final.pth
+python train_model.py --train_data_dir ./data --max_epochs 5 --batch_size 32 --out model.pth
 ```
 
 | Metric          | Value      |

@@ -8,8 +8,8 @@ A PyTorch-based ResNet (CNN) model for classifying fluorescence microscopy image
 
 ### 1. Clone the repository:
 
-```bash
-(https://github.com/Blake-De/cell-moa-classifier.git)
+```bash  
+[GitHub Repository](https://github.com/Blake-De/cell-moa-classifier)
 ```
 cd cell-moa-classifier
 ```

@@ -110,3 +110,12 @@ cell-moa-classifier/
 ├── .gitignore          # Git ignore rules  
 └── model.pth           # Trained model output (not tracked in Git)
 ```
+
+## Author & Acknowledgments
+
+Blake Degioanni  
+[GitHub](https://github.com/Blake-De) • [LinkedIn](https://www.linkedin.com/in/blake-degioanni)  
+
+## Notes
+
+This project is considered complete. Minor updates may be made to improve code documentation (e.g., adding docstrings or clarifying comments).
